@@ -8,11 +8,11 @@ menuToggler.addEventListener('click', () => {
     if(navbar.classList.contains('show-menu')){
         collapsibleMenu.style.maxHeight = collapsibleMenu.scrollHeight + 'px';
         setTimeout( () => {
-            collapsibleMenu.style.overflow = 'visible';
+            collapsibleMenu.style.display = '';
         }, 300)
     }else{
-        collapsibleMenu.style.maxHeight = '0px';
-        collapsibleMenu.style.overflow = 'hidden';
+        collapsibleMenu.style.maxHeight = '';
+        collapsibleMenu.style.overflow = 'none';
     }
 })
 

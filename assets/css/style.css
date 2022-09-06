@@ -61,7 +61,8 @@ input{
 }
 
 .container{
-    margin: 0 auto;
+    margin: 0px auto;
+    padding: 0px 1.2rem;
     max-width: 114rem;
 }
 
@@ -71,6 +72,7 @@ input{
     justify-content:space-between;
     padding-block: .8rem;
     padding: 1.2rem 0;
+    flex-wrap: nowrap;
 }
 
 .menu-toggler{
@@ -78,7 +80,12 @@ input{
 }
 
 .collapsible-menu{
+    display: flex;
+    flex-direction: row;
     font-size: 1.8rem;
+    max-height: initial;
+    overflow: visible;
+    transition: none;
 }
 
 .collapsible-menu > .list{
@@ -86,7 +93,8 @@ input{
 }
 
 .collapsible-menu .list-item{
-    margin: 0 2rem;
+    margin: auto 2rem;
+    text-align: center;
 }
 
 .collapsible-menu .list-link{
@@ -102,7 +110,7 @@ input{
     color: var(--accent-color);
 }
 
-.current-link{
+.collapsible-menu .current-link{
     color: var(--accent-color);
 }
 
@@ -116,6 +124,10 @@ input{
     top: 50%;
     transform: translateY(-50%);
     line-height: 0;
+}
+
+.search-box{
+    margin-top: 0;
 }
 
 .search-icon{
@@ -278,9 +290,11 @@ input{
 }
 
 .card-group{
-    margin: 7rem 0px 2rem;
+    max-width: 110rem;
+    margin-left: auto;
+    margin-right: auto;
     display: grid;
-    gap: 1rem;
+    gap: 2rem;
     grid-template-columns: repeat(3, 1fr);
 }
 
@@ -304,10 +318,11 @@ input{
 }
 
 .card-title {
-    font-size: 2.5rem;
-    line-height: 5.3rem;
+    font-size: 1.8rem;
+    line-height: 3.3rem;
     font-weight: 600;
-    margin-bottom: 3.5rem;}
+    margin-bottom: 3.5rem;
+}
 
 .card-body p {
     line-height: 2.5rem;
@@ -441,3 +456,146 @@ input{
   /* ... */
 }
 
+@media only screen and (max-width: 1200px) {
+
+    .header{
+        padding: 0 3rem;
+    }   
+
+    .container{
+        max-width: 92rem;
+    }
+
+    .navbar{
+        flex-wrap: wrap;
+    }
+   
+    .collapsible-menu {
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        max-height: 0px;
+        overflow: hidden;
+        transition: max-height .25s;
+    }
+
+    .menu-toggler{
+        display: inline-block;
+        width: 5.6rem;
+        height: 4rem;
+        border: 1px solid rgba(0, 0, 0, .1);
+        border-radius: .4rem;
+        line-height: 1;
+        position: relative;
+    }
+
+     .open-menu-icon {
+        transition-delay: .05s;
+    }
+
+    .close-menu-icon {
+        opacity: 0;
+    }
+
+    .toggle-icon {
+        font-size: 2.6rem;
+        color: var(--body-font-color);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        transition: opacity .15s;
+    }
+
+    .list-item{
+        width: 100%;
+    }
+  
+    .list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    } 
+
+    .collapsible-menu .list-item {
+        text-align: center;
+        margin: 1.2rem 1.6rem;
+    }
+
+    .search-box {
+        margin-top: 0.8rem;
+    }
+
+    .cate-img {
+        min-width: 6rem;
+    }
+}
+
+@media only screen and (max-width: 920px) {
+    .cate-item{
+        margin: 0 3rem;
+    }
+
+    .section-tagline {
+        font-size: 1.4;
+        font-weight: 500;
+    }
+
+    .section-title {
+        font-size: 2.4rem;
+        line-height: 4.4rem;
+        margin-bottom: 2.2rem;
+    }
+
+    .card::before,
+    .card::after{
+        content: '';
+        position: unset;
+    }
+
+    .card-group {
+        display: block;
+        margin: 7rem 0px 2rem;
+    }
+
+   #footer {
+        text-align: center;
+    }
+
+    .footer-top-data {
+        display: inline-block;
+    }
+
+    .company-data {
+        max-width: 100%;
+    }
+
+    .footer-bottom-data {
+        display: inline-block;
+        margin: 4rem 0;
+    }
+}
+
+@media only screen and (max-width: 730px) {
+    .cate-item{
+        margin: 0 1rem;
+    }
+
+    .cate-img{
+        min-width: 2rem;
+    }
+    .product-img{
+        display: inline-block;
+    }
+
+    .bottom{
+        justify-content: space-evenly;
+    }
+
+}
+
+@media only screen and (max-width: 472px) {
+    .cate-title{
+        font-size: 1.2rem;
+    }
+}
